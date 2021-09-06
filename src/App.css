@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+:root{
+  --primary-color: #676BFB;
+  --secondary-color: #FA6969;
+  --text-color: #A0A0B4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#id, .App{
+  height: 100vh;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+}
+
+#container-todo{
   display: flex;
   flex-direction: column;
+  width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 28px;
+}
+
+#container-todo .header-todo{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-bottom: 2px solid #F4F6FC;
+  background-color: #FBFBFF;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+#container-todo .todos-container{
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#container-todo .todos-container::-webkit-scrollbar{
+  width: 4px;
+}
+#container-todo .todos-container::-webkit-scrollbar-thumb{
+  background-color: #43A5FD;
+  border-radius: 4px;
+}
+#container-todo .todos-container::-webkit-scrollbar-track{
+  background-color: #C2C2D1;
+}
+
+.header-todo .wrapper-date .day-title{
+  font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.header-todo .wrapper-date .month{
+  margin-top: 5px;
+  font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: normal;
+  color: #C2C2D1;
+}
+
+.header-todo p{
+  font-family: Roboto,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #C2C2D1;
+}
+
+button.add-todo{
+  position: absolute;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 60px;
+  height: 60px;
+  top: 75%;
+  border-radius: 50%;
+  right: 27px;
+  z-index: 10;
+  background-color: var(--secondary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button.add-todo svg{
+  width: 25px;
+  height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button.add-todo:hover{
+  transform: scale(1.09);
 }

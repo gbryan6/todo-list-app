@@ -1,0 +1,79 @@
+
+.wrapper-todo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px;
+  border-bottom: 2px solid #F4F6FC;
+}
+
+.wrapper-todo .task{
+  display: flex;
+  align-items: center;
+}
+
+.task .custom-checkbox{
+  min-width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.task .custom-checkbox .checkmark{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #222;
+  display: inline-block;
+  border-radius: 3px;
+  background: var(--secondary-color)
+  url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+  transition: background-size 0.2s ease;
+}
+
+.task .custom-checkbox input:checked + .checkmark {
+  border: none;
+  background-size: 60%;
+  transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.task .custom-checkbox input{
+  display: none;
+}
+
+
+.wrapper-todo .hour-task{
+  margin-left: 20px;
+  font-family: Inter, sans-serif;
+  color: #5d5d74;
+  font-size: 16px;
+}
+
+.wrapper-todo .task p{
+  font-family: Inter, sans-serif;
+  color: #5d5d74;
+}
+
+.wrapper-todo .completed{
+  color: #e3e3e4 !important;
+  text-decoration: line-through;
+}
+
+.info-task{
+  display: flex;
+  align-items: center;
+}
+
+.info-task button{
+  background-color: transparent;
+  margin-left: 10px;
+}
+
+.info-task button svg{
+  width: 17px;
+  height: 17px;
+  color: #5d5d74;
+}
+
+.info-task button:hover svg{
+  color: red;
+}
